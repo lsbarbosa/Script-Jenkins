@@ -1,6 +1,6 @@
 import groovy.json.JsonSlurper; 
 try{ 
-    List<String>params = new ArrayList<String>() 
+    List params = new ArrayList() 
     URL apiUrl = "https://github.com/lsbarbosa/MyProject".toURL() 
     List branches = new JsonSlurper().parse(apiUrl.newReader()) 
     for (branch in branches) { 
