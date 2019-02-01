@@ -1,4 +1,4 @@
-GITHUB_PROJECT = “https://github.com/zagadishreddy/game-of-life.git”
+GITHUB_PROJECT = “https://github.com/lsbarbosa/MyProject.git”
 GITHUB_CREDENTIALS_ID = “Telcel” //maps to a Jenkins Credentials Vault ID
 APPLICATION_NAME = “Telcel”
 GITHUB_BRANCH = ‘${env.BRANCH_NAME}’
