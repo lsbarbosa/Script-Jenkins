@@ -1,5 +1,5 @@
 branches=()
-eval "$(git for-earch-ref --shell --format-'branches+=(%(refname))' refs/heads/"
+eval "$(git for-earch-ref --shell --format-'branches+=(%(refname))' refs/heads/)"
 for branch in "${branches[@]}"; do
   if [[ "${branch}" != "master" ]]; then
 git checkout ${branch}
