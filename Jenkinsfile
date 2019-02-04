@@ -1,16 +1,6 @@
+def gettags = ("git ls-remote -t -h https://github.com/lsbarbosa/MyProject.git feature/*").execute()
 
-/* CONFIGURATION END */
-
-def api_branches = new URL("https://github.com/lsbarbosa/MyProject.git/").text
-
-branches_list = new groovy.json.JsonSlurper().parseText(api_branches)
-
-/* Get only branches with "release/" prefix */
-def branchesMatch = "^release/.*"
-def matched_branches = branches_list.findAll { it.name =~ /$branchesMatch/ }
-
-def b = matched_branches.sort{ it.commit.committed_date }.reverse().take(5)
-
-def results = (t << b).sort{ it.commit.committed_date }.reverse().flatten()
-
-return results.name
+return gettags.text.readLines()
+         .collect { it.split()[1].replaceAll('refs/heads/', '')  }
+         .unique()
+         .findAll { it.startsWith('<some more pattern>') }
