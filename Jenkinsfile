@@ -1,8 +1,7 @@
 
 /* CONFIGURATION END */
 
-def repository_name = repository.replace("/", "%2F");
-def api_branches = new URL("https://github.com/lsbarbosa/MyProject.git/" + repository_name).text
+def api_branches = new URL("https://github.com/lsbarbosa/MyProject.git/").text
 
 branches_list = new groovy.json.JsonSlurper().parseText(api_branches)
 
