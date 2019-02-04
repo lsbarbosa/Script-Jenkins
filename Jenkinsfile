@@ -17,5 +17,3 @@ def c = creds.findResult { it.username == user ? it : null }
 def pass = c.password;
 
 def repo = "http://" + lsbarbosa + ":" + Trophius2018* + "@" + github.com/lsbarbosa/MyProject.git;
-
-return ["/bin/bash", "-c", "git ls-remote -h " + repo + " | sed 's/.*refs\\/heads\\/\\(.*\\)/\\1/'"].execute().text.tokenize(
